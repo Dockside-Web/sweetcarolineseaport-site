@@ -1,4 +1,6 @@
 ---
+import { contactInfo } from "../data/info.ts";
+
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
@@ -66,10 +68,10 @@ const currentYear = new Date().getFullYear();
             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
           </svg>
           <a
-            href="mailto:info@sweetcarolineseaport.com"
+            href={`mailto:${contactInfo.email}`}
             class="hover:underline hover:text-brand-accent"
           >
-            info@sweetcarolineseaport.com
+            {contactInfo.email}
           </a>
         </p>
         <p class="flex items-start gap-2 text-slate-300">
@@ -97,11 +99,13 @@ const currentYear = new Date().getFullYear();
     >
       <p>&copy; 2026 Sweet Caroline Seaport. All rights reserved.</p>
       <div class="flex gap-6">
-        <a href="/terms" class="hover:text-white transition-colors"
-          >Terms of Service</a
+        <a
+          href="/legal/terms-of-service/"
+          class="hover:text-white transition-colors">Terms of Service</a
         >
-        <a href="/privacy" class="hover:text-white transition-colors"
-          >Privacy Policy</a
+        <a
+          href="/legal/privacy-policy/"
+          class="hover:text-white transition-colors">Privacy Policy</a
         >
       </div>
     </div>
